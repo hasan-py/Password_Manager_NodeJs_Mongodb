@@ -1,0 +1,32 @@
+<%- include('header'); -%>
+
+<div class="container my-5">
+<h1>Category List</h1>
+  <div class="table-responsive">
+  <table class="table table-hover">
+  <thead class="thead bg-info text-light">
+    <tr>
+      <th scope="col">Catyegory Name</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if(data.length>0){ %>
+      <% data.map((cat)=>{ %>
+      <tr>
+        <td scope="row"><%= cat.cat_name %></td>
+        <td>
+          <a class="btn btn-sm btn-info" href="/all-category/edit/<%= cat._id %>">Edit</a>
+          <a class="btn btn-sm btn-danger" href="/all-category/delete/<%= cat._id %>">Delete</a>
+        </td>
+      </tr>
+    <% })} %>
+    <tr>
+   </tbody>
+</table>
+</div>
+
+
+<%- include('footer'); -%>
+
+
